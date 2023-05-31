@@ -61,8 +61,6 @@ public class LoginTests {
 
         Thread.sleep(8000);
         MobileElement el4 = (MobileElement) driver.findElementById("trademark_image_view");
-        //trademark_image_view
-        //container_custom_app_bar_include_on_fragment_main
         boolean actual = el4.isDisplayed();
         Assertions.assertTrue(actual);
     }
