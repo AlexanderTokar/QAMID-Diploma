@@ -74,9 +74,6 @@ public class NewsPageTest {
         Thread.sleep(500);
         AuxiliaryActions.verticalSwipeByPercentages(30, 90, 50, driver);
 
-        //Thread.sleep(500);
-        //AuxiliaryActions.verticalSwipeByPercentages(90, 30, 50, driver);
-
         Thread.sleep(1000);
         MobileElement el4 = (MobileElement) driver.findElementById("container_list_news_include");
 
@@ -273,7 +270,6 @@ public class NewsPageTest {
         boolean actual = el15.isDisplayed();
         Assertions.assertTrue(actual);
     }
-/////////////////////////////////////////////////////
 
     @Test
     public void addNewsOneTextFieldIsEmpty() throws InterruptedException {

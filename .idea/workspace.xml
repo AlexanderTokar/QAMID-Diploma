@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="323bc348-1001-4e08-9021-f75721a91107" name="Changes" comment="AppNavigation tests added">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/qamid/NewsPageTest.java" afterDir="false" />
+    <list default="true" id="323bc348-1001-4e08-9021-f75721a91107" name="Changes" comment="NewsPage tests added">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/netology/qamid/ClaimsPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/qamid/NewsPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/qamid/NewsPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +57,8 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.NewsPageTest.sortNews">
-    <configuration name="NewsPageTest.changeNewsDateOrTimeFieldIsBlank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ClaimsPageTest.changeToEmptyCommentToClaim">
+    <configuration name="ClaimsPageTest.addCommentToClaim" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -70,7 +71,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.qamid.NewsPageTest.changeNewsDateOrTimeFieldIsBlank&quot;" />
+            <option value="&quot;ru.netology.qamid.ClaimsPageTest.addCommentToClaim&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -80,7 +81,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="NewsPageTest.changeNewsOneOfTheTextFieldsIsBlank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ClaimsPageTest.addEmptyCommentToClaim" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -93,7 +94,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.qamid.NewsPageTest.changeNewsOneOfTheTextFieldsIsBlank&quot;" />
+            <option value="&quot;ru.netology.qamid.ClaimsPageTest.addEmptyCommentToClaim&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -103,7 +104,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="NewsPageTest.deleteNews" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ClaimsPageTest.changeCommentToClaim" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -116,7 +117,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.qamid.NewsPageTest.deleteNews&quot;" />
+            <option value="&quot;ru.netology.qamid.ClaimsPageTest.changeCommentToClaim&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,7 +127,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="NewsPageTest.filterNews" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ClaimsPageTest.changeToEmptyCommentToClaim" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +140,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.qamid.NewsPageTest.filterNews&quot;" />
+            <option value="&quot;ru.netology.qamid.ClaimsPageTest.changeToEmptyCommentToClaim&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -149,7 +150,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="NewsPageTest.sortNews" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ClaimsPageTest.filterClaimsByStatusCheckboxesAreEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +163,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.qamid.NewsPageTest.sortNews&quot;" />
+            <option value="&quot;ru.netology.qamid.ClaimsPageTest.filterClaimsByStatusCheckboxesAreEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -174,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.NewsPageTest.sortNews" />
-        <item itemvalue="Gradle.NewsPageTest.filterNews" />
-        <item itemvalue="Gradle.NewsPageTest.deleteNews" />
-        <item itemvalue="Gradle.NewsPageTest.changeNewsOneOfTheTextFieldsIsBlank" />
-        <item itemvalue="Gradle.NewsPageTest.changeNewsDateOrTimeFieldIsBlank" />
+        <item itemvalue="Gradle.ClaimsPageTest.changeToEmptyCommentToClaim" />
+        <item itemvalue="Gradle.ClaimsPageTest.changeCommentToClaim" />
+        <item itemvalue="Gradle.ClaimsPageTest.addEmptyCommentToClaim" />
+        <item itemvalue="Gradle.ClaimsPageTest.addCommentToClaim" />
+        <item itemvalue="Gradle.ClaimsPageTest.filterClaimsByStatusCheckboxesAreEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685620047173</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="NewsPage tests added">
+      <created>1685695250185</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685695250185</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +278,7 @@
     <MESSAGE value="Login page tests added" />
     <MESSAGE value="cleaning code at LoginTests" />
     <MESSAGE value="AppNavigation tests added" />
-    <option name="LAST_COMMIT_MESSAGE" value="AppNavigation tests added" />
+    <MESSAGE value="NewsPage tests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="NewsPage tests added" />
   </component>
 </project>
