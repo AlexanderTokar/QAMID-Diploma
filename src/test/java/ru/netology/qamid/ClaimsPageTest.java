@@ -1,5 +1,8 @@
 package ru.netology.qamid;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import org.junit.jupiter.api.extension.ExtendWith;
 import ru.netology.*;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -8,54 +11,60 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.netology.setting.SettingLoginTest;
+import ru.netology.setting.TestListener;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ClaimsPageTest {
+@ExtendWith(TestListener.class)
+public class ClaimsPageTest extends SettingLoginTest {
 
-    public AndroidDriver driver;
-
-    @BeforeEach
-    public void setUp() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("appium:deviceName", "API29");
-        desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
-        desiredCapabilities.setCapability("appium:appPackage", "ru.iteco.fmhandroid");
-        desiredCapabilities.setCapability("appium:appActivity", "ru.iteco.fmhandroid.ui.AppActivity");
-        desiredCapabilities.setCapability("appium:unicodeKeyboard", true);
-        desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
-        desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
-        desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
-        desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
-
-        URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
-
-        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-
-        Thread.sleep(6000);
-
-        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
-        el1.isDisplayed();
-        el1.click();
-        TextGenerator.typeText("login2", driver);
-
-        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
-        el2.isDisplayed();
-        el2.click();
-        TextGenerator.typeText("password2", driver);
-
-        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
-        el3.isDisplayed();
-        el3.click();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-    }
+//    public AndroidDriver driver;
+//
+//    @BeforeEach
+//    public void setUp() throws MalformedURLException, InterruptedException {
+//        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+//        desiredCapabilities.setCapability("platformName", "Android");
+//        desiredCapabilities.setCapability("appium:deviceName", "API29");
+//        desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
+//        desiredCapabilities.setCapability("appium:appPackage", "ru.iteco.fmhandroid");
+//        desiredCapabilities.setCapability("appium:appActivity", "ru.iteco.fmhandroid.ui.AppActivity");
+//        desiredCapabilities.setCapability("appium:unicodeKeyboard", true);
+//        desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
+//        desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
+//        desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
+//        desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
+//
+//        URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
+//
+//        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
+//
+//        Thread.sleep(6000);
+//
+//        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
+//        el1.isDisplayed();
+//        el1.click();
+//        TextGenerator.typeText("login2", driver);
+//
+//        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
+//        el2.isDisplayed();
+//        el2.click();
+//        TextGenerator.typeText("password2", driver);
+//
+//        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
+//        el3.isDisplayed();
+//        el3.click();
+//    }
+//
+//    @AfterEach
+//    public void tearDown() {
+//        driver.quit();
+//    }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий")
+    @Description("Открытие и пролистывание экрана с блоками претензий")
     public void claimsPageNavActions() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -82,6 +91,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и создание претензии")
+    @Description("Открытие экрана с блоками претензий и добавление новой претензии с заполнением всех полей корректными значениями")
     public void addNewClaimWithCorrectFillingFields() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -142,6 +153,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка создания претензии с пустым полем Nсполнитель")
+    @Description("Открытие экрана с блоками претензий и попытка добавления новой претензии с заполнением всех полей корректными значениями. Поле Nсполнитель не заполнено")
     public void addNewClaimExecutorFieldIsEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -198,6 +211,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка создания претензии с пустым текстовым полем")
+    @Description("Открытие экрана с блоками претензий и попытка добавления новой претензии с заполнением всех (кроме одного текстового поля Описание) полей корректными значениями")
     public void addNewClaimOneTextFieldIsEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -262,6 +277,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка создания претензии с пустым полем Дата")
+    @Description("Открытие экрана с блоками претензий и попытка добавления новой претензии с заполнением всех полей корректными значениями. Поле Дата не заполнено")
     public void addNewClaimDateFieldIsEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -319,6 +336,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и изменение статуса одной из них")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу, изменение статуса одной из претензий")
     public void changeClaimStatus() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -337,6 +356,7 @@ public class ClaimsPageTest {
         el31.click();
 
         Thread.sleep(1000);
+        //MobileElement el32 = (MobileElement) driver.findElementById("item_filter_in_progress");
         MobileElement el32 = (MobileElement) driver.findElementById("item_filter_open");
         el32.isDisplayed();
         el32.click();
@@ -396,6 +416,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и редактирование одной из претензий")
+    @Description("Открытие экрана с блоками претензий и редактирование одной из претензий")
     public void changeClaimTextFields() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -481,6 +503,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка редактирования претензии с пустым текстовым полем")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу и попытка редактирования претензии с заполнением всех (кроме одного текстового поля Заголовок) полей корректными значениями")
     public void changeClaimTextFieldIsEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -533,6 +557,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка редактирования претензии с пустым полем Время")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу и попытка редактирования претензии с заполнением всех полей корректными значениями. Поле Время не заполнено")
     public void changeClaimTimeFieldIsEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -591,6 +617,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка фильтрации претензий")
+    @Description("Открытие экрана с блоками претензий и попытка фильтрации претензий при отсутствии выбранных параметров")
     public void filterClaimsByStatusCheckboxesAreEmpty() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -628,6 +656,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и добавление комментария к претензии")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу и добавления комментария к претензии")
     public void addCommentToClaim() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -681,6 +711,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка добавления комментария к претензии")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу и попытка добавления пустого комментария к претензии")
     public void addEmptyCommentToClaim() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -729,6 +761,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и изменения комментария к претензии")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу, создание комментария и редактирование ранее созданного комментария к претензии")
     public void changeCommentToClaim() throws InterruptedException {
         Thread.sleep(6000);
 
@@ -803,6 +837,8 @@ public class ClaimsPageTest {
     }
 
     @Test
+    @Step("2. Переход на экран с блоками претензий и попытка изменения комментария к претензии")
+    @Description("Открытие экрана с блоками претензий, фильтрация претензий по статусу, создание комментария и редактирование ранее созданного комментария к претензии путем очистки поля")
     public void changeToEmptyCommentToClaim() throws InterruptedException {
         Thread.sleep(6000);
 

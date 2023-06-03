@@ -1,6 +1,8 @@
 package ru.netology.qamid;
 
 import io.appium.java_client.android.connection.ConnectionStateBuilder;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import ru.netology.*;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -8,15 +10,20 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.netology.setting.TestListener;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@ExtendWith(TestListener.class)
 public class LoginTests {
 
     public AndroidDriver driver;
 
     @BeforeEach
+    @Step("1. Запуск приложения")
     public void setUp() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "Android");
@@ -37,11 +44,14 @@ public class LoginTests {
     }
 
     @AfterEach
+    @Step("3. Закрытие приложения")
     public void tearDown() {
         driver.quit();
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Авторизация в приложении с использованием валидных значений логина и пароля")
     public void validLoginAndPassword() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -66,6 +76,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Попытка авторизации в приложении с использованием невалидного значения логина и валидного значения пароля")
     public void invalidLoginAndValidPassword() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -91,6 +103,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Попытка авторизации в приложении с использованием валидного значения логина и незаполненным полем пароля")
     public void validLoginAndEmptyPasswordField() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -111,6 +125,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Авторизация в приложении с использованием валидных значений логина и пароля и выход из учетной записи")
     public void successfulLoginAndLogout() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -151,6 +167,8 @@ public class LoginTests {
     }
 
     @Test
+    @Step("2. Авторизация в приложении")
+    @Description("Авторизация в приложении с использованием валидных значений логина и пароля с закрытием приложения")
     public void successfulLoginAndQuitWithoutLogout() throws InterruptedException {
         Thread.sleep(5000);
 
@@ -186,6 +204,8 @@ public class LoginTests {
     }
 
     @Test //данный тест не работает при подключении физического устройства
+    @Step("2. Авторизация в приложении")
+    @Description("Попытка авторизации в приложении с с использованием валидных значений логина и пароля при отсутствии связи")
     public void validLoginAndPasswordNoConnection() throws InterruptedException {
         Thread.sleep(5000);
 
