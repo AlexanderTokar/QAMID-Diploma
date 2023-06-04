@@ -20,48 +20,6 @@ import java.net.URL;
 @ExtendWith(TestListener.class)
 public class NewsPageTest extends SettingLoginTest {
 
-//    public AndroidDriver driver;
-//
-//    @BeforeEach
-//    public void setUp() throws MalformedURLException, InterruptedException {
-//        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-//        desiredCapabilities.setCapability("platformName", "Android");
-//        desiredCapabilities.setCapability("appium:deviceName", "API29");
-//        desiredCapabilities.setCapability("appium:automationName", "UiAutomator2");
-//        desiredCapabilities.setCapability("appium:appPackage", "ru.iteco.fmhandroid");
-//        desiredCapabilities.setCapability("appium:appActivity", "ru.iteco.fmhandroid.ui.AppActivity");
-//        desiredCapabilities.setCapability("appium:unicodeKeyboard", true);
-//        desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
-//        desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
-//        desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
-//        desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
-//
-//        URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
-//
-//        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-//
-//        Thread.sleep(6000);
-//
-//        MobileElement el1 = (MobileElement) driver.findElementById("login_text_input_layout");
-//        el1.isDisplayed();
-//        el1.click();
-//        TextGenerator.typeText("login2", driver);
-//
-//        MobileElement el2 = (MobileElement) driver.findElementById("password_text_input_layout");
-//        el2.isDisplayed();
-//        el2.click();
-//        TextGenerator.typeText("password2", driver);
-//
-//        MobileElement el3 = (MobileElement) driver.findElementById("enter_button");
-//        el3.isDisplayed();
-//        el3.click();
-//    }
-//
-//    @AfterEach
-//    public void tearDown() {
-//        driver.quit();
-//    }
-
     @Test
     @Step("2. Переход на экран с блоками новостей")
     @Description("Открытие и пролистывание экрана с блоками новостей")
@@ -85,6 +43,7 @@ public class NewsPageTest extends SettingLoginTest {
 
         Thread.sleep(1000);
         MobileElement el4 = (MobileElement) driver.findElementById("container_list_news_include");
+        //MobileElement el4 = (MobileElement) driver.findElementById("container_list_news_includ"); ADD MISTAKE
 
         boolean actual = el4.isDisplayed();
         Assertions.assertTrue(actual);
